@@ -4,73 +4,58 @@ import Icon from '../components/icons'
 import Google from '../icons/google.svg'
 
 function SignUp() {
-    const [signUpObj, setSignUpObj] = useState({
+    const [signUpForm, setSignUpForm] = useState({
       email: "",
-      step: 1,
       name:"",
-      visibility: {
-        tick: true,
-        password: true,
-      },
+      password: "",
       errors: {
-        email: false,
-        password: false,
-        name: false
-      },
-      password: {
-        value: "",
-        strength: 0,
+        email: "",
+        password: "",
+        name: ""
       },
       validation:{
         email: new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'),
         password: new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$')
       }
     });
-   
-    const handleEmailChange = (e) => {
-      setSignUpObj((prev) => ({ ...prev, email: e.target.value, errors: { ...prev.errors, email: false } }));
+    const [toggle,setToggle] =useState({
+      consent:true,
+      password:true,
+    });
+    const [step,setStep] =useState(1);
+    const [PasswordStrength,setPasswordStrength] =useState(0);
+  
+    const iconToggle = (type) => {
+      setToggle((prev) => ({ ...prev, [type]: !prev[type] }));
     };
- 
-    const handleNameChange = (e) => {
-      setSignUpObj((prev) => ({ ...prev, name: e.target.value, errors: { ...prev.errors, name: false } }));
+    
+    const handleValidation = (name, value) => {
+      const errorMessages = {
+        required: `${name} is required.`,
+        invalid_email: 'Your email is invalid.',
+        invalid_password: 'Password must be at least 6 characters long and contain at least one letter and one number.'
+      };
+    
+      const error = value === "" ? "required" : 
+                    name === "email" && !signUpForm.validation.email.test(value) ? "invalid_email" : 
+                    name === "password" && !signUpForm.validation.password.test(value) ? "invalid_password" : 
+                    null;
+      setSignUpForm((prev) => ({ ...prev, errors: { ...prev.errors, [name]: errorMessages[error] } }));
+      
+      return error === null;
     };
-
-    const validateEmail = () => {
-      const { email } = signUpObj;
-      if (!signUpObj.validation.email.test(email)) {
-        setSignUpObj((prev) => ({ ...prev, errors: { ...prev.errors, email: true } }));
-        return false;
-      }
-      return true;
-    };
-   
-    const handleEmailContinue = (e) => {
-      e.preventDefault();
-      if (signUpObj.email === "") {
-        setSignUpObj((prev) => ({ ...prev, errors: { ...prev.errors, email: "required" } }));
-      } else if (validateEmail()) {
-        setSignUpObj((prev) => ({ ...prev, step: 2 }));
-      }
-    };
-
-    const toggleTick = () => {
-      setSignUpObj((prev) => ({ ...prev, visibility: { ...prev.visibility, tick: !prev.visibility.tick } }));
-    };
-
-    const eyeToggle =() =>{
-      setSignUpObj((prev) => ({ ...prev, visibility: { ...prev.visibility, password: !prev.visibility.password } }));
-    }
-
-    const handlePasswordChange = (e) => {
-      setSignUpObj((prev) => ({ ...prev, password: e.target.value, errors: { ...prev.errors, password: false } }));
-      const newPassword = e.target.value;
-      setSignUpObj((prev) => ({
+    
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setSignUpForm((prev) => ({
         ...prev,
-        password: {
-          value: newPassword,
-          strength: getPasswordStrength(newPassword),
-        },
+        [name]: value,
+        errors: { ...prev.errors, [name]: null },
       }));
+
+      if (name === "password") {
+        setPasswordStrength(getPasswordStrength(value));
+    }
     };
 
     const getPasswordStrength = (password) => {
@@ -82,17 +67,23 @@ function SignUp() {
       return strength; 
     };
 
+    const handleEmailContinue = (e) => {
+      e.preventDefault();
+      const email = signUpForm.email;
+      const isValid = handleValidation('email', email);
+      if (isValid) {
+        setStep(2);
+      }
+    };
+
     const handleSignUp = (e) => {
       e.preventDefault();
-      if(signUpObj.name===""){
-        setSignUpObj((prev) => ({ ...prev, errors: { ...prev.errors, name :"required"}}));
+      const isEmailValid = handleValidation('email', signUpForm.email);
+      const isNameValid = handleValidation('name', signUpForm.name);
+      const isPasswordValid = handleValidation('password', signUpForm.password);
+      if (isEmailValid && isNameValid && isPasswordValid) {
+          return true;
       }
-      if (signUpObj.password.value === "") {
-        setSignUpObj((prev) => ({ ...prev, errors: { ...prev.errors, password: "required" } }));
-      }
-      else if (!signUpObj.validation.password.test(signUpObj.password.value)) {
-        setSignUpObj((prev) => ({ ...prev, errors: { ...prev.errors, password: true } }));
-      } 
     };
 
   return (
@@ -100,7 +91,7 @@ function SignUp() {
      
       <div className='signUp-container'>
       <div className="inner-container">
-      {signUpObj.step === 1 ? (
+      {step === 1 ? (
         <>
         <div className="sign">
             <Link to="/signup">
@@ -125,13 +116,12 @@ function SignUp() {
 
             <div className='mail-continue'>
                 <div className='mail-invalid'>
-                   <div className={`input ${signUpObj.errors.email ? 'invalid-input' : ''}`}>
+                   <div className={`input ${signUpForm.errors.email ? 'invalid-input' : ''}`}>
                         <Icon icon="mail" className="svg-icon"/>
-                        <input type="text" placeholder="Pietro@gmail.com" value={signUpObj.email}
-                         onChange={handleEmailChange} />
+                        <input type="text" name='email' placeholder="Pietro@gmail.com" value={signUpForm.email}
+                         onChange={handleInputChange} />
                     </div>
-                    {signUpObj.errors.email === "required" && <p className="invalid">Email is required.</p>}
-                    {signUpObj.errors.email=== true &&  <p className='invalid'>Your email is invalid.</p>}
+                    {signUpForm.errors.email && (<p className="invalid">{signUpForm.errors.email}</p>)}
                 </div>
                 <button className='btn' >Continue</button>
             </div>
@@ -146,43 +136,41 @@ function SignUp() {
               <p>Create an Account</p>
             </div>
 
-          <form className="form" onSubmit={handleSignUp}>
+            <form className="form" onSubmit={handleSignUp}>
               <div className="input">
                   <Icon icon="mail" className="svg-icon"/>
-                  <input type="text" placeholder="Pietro@gmail.com" value={signUpObj.email} />
+                  <input type="text" name='email' placeholder="Pietro@gmail.com" value={signUpForm.email} />
               </div>
               <div className='mail-input'>
-              <div  className={`input ${signUpObj.errors.name ? 'invalid-input' : ''} `}>
+              <div  className={`input ${signUpForm.errors.name ? 'invalid-input' : ''} `}>
                   <Icon icon="user" className="svg-icon"/>
-                  <input type="name" placeholder="Username" value={signUpObj.name} onChange={handleNameChange} />
+                  <input type="name" name='name' placeholder="Username" value={signUpForm.name} onChange={handleInputChange} />
               </div>
-              {signUpObj.errors.name === "required" && <p className="invalid">Name is required.</p>}
-
+              {signUpForm.errors.name && (<p className="invalid">{signUpForm.errors.name}</p>)}
               </div>
              
               <div className='password'>
-             
-                  <div  className={`input ${signUpObj.errors.password ? 'invalid-input' : ''} pass-input`}>
+              
+                  <div  className={`input ${signUpForm.errors.password ? 'invalid-input' : ''} pass-input`}>
                     <div className='pass-icon-text'>
                         <Icon icon="password-lock" className="svg-icon"/>
                         
                         <input 
-                            type={signUpObj.visibility.password ? 'text' : 'password'} 
+                            type={toggle.password ? 'text' : 'password'} 
                             placeholder="Password" 
-                            value={signUpObj.password.value} 
-                            onChange={handlePasswordChange} 
+                            value={signUpForm.password} 
+                            name='password'
+                            onChange={handleInputChange} 
                         />
                     </div>
-                    <Icon icon="password-eye" className="svg-icon" onClick={eyeToggle}/>
+                    <Icon icon="password-eye" className="svg-icon" onClick={() => iconToggle('password')}/>
                   </div>
-                  {signUpObj.errors.password === "required" && <p className="invalid">Password is required.</p>}
-                  {signUpObj.errors.password===true && <p className='invalid'>Password must be at least 6 characters long 
-                    and contain at least one letter and one number.</p>}
+                  {signUpForm.errors.password && (<p className="invalid">{signUpForm.errors.password}</p>)}
 
                   <div className='password-strength'>
                     <div className='strength-bars'>
                       {[1, 2, 3].map(index => (
-                        <div key={index} className={index <= signUpObj.password.strength ? 'active' : 'inactive'}></div>
+                        <div key={index} className={index <= PasswordStrength ? 'active' : 'inactive'}></div>
                       ))}
                     </div>
                     <div>
@@ -192,10 +180,11 @@ function SignUp() {
                   </div>
                  
                  <div className='checkbox'>
-                      <div className='checkbox-icon' onClick={toggleTick}>
-                      {signUpObj.visibility.tick && (
-                      <Icon icon="tick" className="check-tick"/>
-                      )}
+                      <div className='checkbox-icon' onClick={() => iconToggle('consent')}>
+                       {toggle.consent && (
+                       <Icon icon="tick" className="check-tick"/>
+                      )} 
+                     
                       </div>
                     
                       <p className='tac'>By agreeing this you are accepting the <span className='span-tac'>T&C </span>of ReelX</p>
