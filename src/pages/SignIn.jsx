@@ -12,7 +12,6 @@ function SignIn() {
     const [emailErr, setEmailErr] = useState(false);
     const [password, setPassword] = useState('');
     const [pwdError, setPwdError] = useState(false);
-    const { isDarkTheme } = useContext(ThemeContext);
     const location = useLocation();
 
     useEffect(() => {
@@ -53,14 +52,6 @@ function SignIn() {
     const eyeToggle =() =>{
         setPassVisible(!passVisible);
       }
-    // const buttonStyle ={
-    //   backgroundColor: isDarkTheme ? '#FAFAFA' : '#18181B',
-    // color: isDarkTheme ? '#18181B' :  '#FAFAFA'
-    //  }
-    //  const buttonOther ={
-    //     fontWeight : "400"
-    //  }
-
   return (
     <>
       
