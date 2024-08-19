@@ -43,7 +43,7 @@ function SignUp() {
       setSignUpForm((prev) => ({ ...prev, errors: { ...prev.errors, [name]: errorMessages[error] } }));
       
       return error === null;
-    };
+      };
     
     const handleInputChange = (e) => {
       const { name, value } = e.target;
