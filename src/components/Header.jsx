@@ -10,23 +10,15 @@ function Header() {
     <>
       <div className='header'>
 
-          {isDarkTheme ?  
-            <>
+          {isDarkTheme ?   
               <img src={logoDark} height={"32px"} onClick={toggleTheme} />
-              <div className='header-help'>
+          :
+              <img src={logoLight} height={"32px"} onClick={toggleTheme}/>
+          }
+           <div className='header-help'>
                   <Icon icon="help-square" className="svg-icon"/>
                   <p  className='help'>Help</p>
               </div>
-            </>
-          :
-            <>
-              <img src={logoLight} height={"32px"} onClick={toggleTheme}/>
-              <div className='header-help'>
-                <Icon icon="help-square" className="svg-icon"/>
-                <p className='help'>Help</p>
-              </div>
-            </>
-          }
       </div>
     </>
   )
