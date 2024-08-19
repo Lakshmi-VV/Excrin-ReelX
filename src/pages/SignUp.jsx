@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Icon from '../components/icons'
 import Google from '../icons/google.svg'
-import Mail from '../icons/mail.svg'
-import User from '../icons/user.svg'
-import Lock from '../icons/password-lock.svg'
-import Eye from '../icons/password-eye.svg'
-import Tick from '../icons/tick.svg'
 
 function SignUp() {
     const [signUpObj, setSignUpObj] = useState({
@@ -38,7 +34,7 @@ function SignUp() {
     const handleNameChange = (e) => {
       setSignUpObj((prev) => ({ ...prev, name: e.target.value, errors: { ...prev.errors, name: false } }));
     };
-    
+
     const validateEmail = () => {
       const { email } = signUpObj;
       if (!signUpObj.validation.email.test(email)) {
@@ -129,10 +125,10 @@ function SignUp() {
 
             <div className='mail-continue'>
                 <div className='mail-invalid'>
-                    <div className="input">
-                        <img src= {Mail}/>
+                   <div className={`input ${signUpObj.errors.email ? 'invalid-input' : ''}`}>
+                        <Icon icon="mail" className="svg-icon"/>
                         <input type="text" placeholder="Pietro@gmail.com" value={signUpObj.email}
-                         onChange={handleEmailChange}/>
+                         onChange={handleEmailChange} />
                     </div>
                     {signUpObj.errors.email === "required" && <p className="invalid">Email is required.</p>}
                     {signUpObj.errors.email=== true &&  <p className='invalid'>Your email is invalid.</p>}
@@ -152,12 +148,12 @@ function SignUp() {
 
           <form className="form" onSubmit={handleSignUp}>
               <div className="input">
-                  <img src= {Mail}/>
+                  <Icon icon="mail" className="svg-icon"/>
                   <input type="text" placeholder="Pietro@gmail.com" value={signUpObj.email} />
               </div>
               <div className='mail-input'>
-              <div className="input">
-                  <img src= {User}/>
+              <div  className={`input ${signUpObj.errors.name ? 'invalid-input' : ''} `}>
+                  <Icon icon="user" className="svg-icon"/>
                   <input type="name" placeholder="Username" value={signUpObj.name} onChange={handleNameChange} />
               </div>
               {signUpObj.errors.name === "required" && <p className="invalid">Name is required.</p>}
@@ -165,9 +161,11 @@ function SignUp() {
               </div>
              
               <div className='password'>
-                  <div className="input pass-input">
+             
+                  <div  className={`input ${signUpObj.errors.password ? 'invalid-input' : ''} pass-input`}>
                     <div className='pass-icon-text'>
-                        <img src= {Lock}/>
+                        <Icon icon="password-lock" className="svg-icon"/>
+                        
                         <input 
                             type={signUpObj.visibility.password ? 'text' : 'password'} 
                             placeholder="Password" 
@@ -175,7 +173,7 @@ function SignUp() {
                             onChange={handlePasswordChange} 
                         />
                     </div>
-                    <img src={Eye} onClick={eyeToggle}/>
+                    <Icon icon="password-eye" className="svg-icon" onClick={eyeToggle}/>
                   </div>
                   {signUpObj.errors.password === "required" && <p className="invalid">Password is required.</p>}
                   {signUpObj.errors.password===true && <p className='invalid'>Password must be at least 6 characters long 
@@ -196,7 +194,7 @@ function SignUp() {
                  <div className='checkbox'>
                       <div className='checkbox-icon' onClick={toggleTick}>
                       {signUpObj.visibility.tick && (
-                      <img className='check-tick' src={Tick} />
+                      <Icon icon="tick" className="check-tick"/>
                       )}
                       </div>
                     

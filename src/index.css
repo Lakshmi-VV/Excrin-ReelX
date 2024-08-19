@@ -164,6 +164,10 @@ font-family: sora;
 input:focus{
 outline: none;
 }
+
+.invalid-input {
+  border: 1px solid red;
+}
 .mail-continue{
 display: flex;
 flex-direction: column;

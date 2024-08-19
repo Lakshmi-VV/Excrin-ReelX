@@ -2,9 +2,7 @@ import React, { useState,useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import Google from '../icons/google.svg'
-import Mail from '../icons/mail.svg'
-import Lock from '../icons/password-lock.svg'
-import Eye from '../icons/password-eye.svg'
+import Icon from '../components/icons';
 import { ThemeContext } from '../contexts/themeContext';
 
 function SignIn() {
@@ -94,8 +92,8 @@ function SignIn() {
           <div className='mail-continue'>
           <div className='mail-invalid'>
                 <div className="input">
-                <img src= {Mail}/>
-                <input type="text" placeholder="Pietro@gmail.com"   value={email}
+                <Icon className="svg-icon" icon="mail"/>
+                <input type="text" placeholder="Pietro@gmail.com" value={email}
                       onChange={handleEmailChange}/>
                 </div>
                 {emailErr &&  <p className='invalid'>Your email is invalid.</p>}
@@ -113,14 +111,14 @@ function SignIn() {
 
                 <form className="form">
                   <div className="input">
-                        <img src= {Mail}/>
+                        <Icon className="svg-icon" icon="mail"/>
                         <input type="text" placeholder="Pietro@gmail.com"  value={email} />
                   </div>
 
                   <div className='password'>
                     <div className="input pass-input">
                       <div className='pass-icon-text'>
-                        <img src= {Lock}/>
+                        <Icon className="svg-icon" icon="password-lock"/>
                         <input 
                             type={passVisible ? 'text' : 'password'} 
                             placeholder="Password" 
@@ -128,7 +126,7 @@ function SignIn() {
                             onChange={handlePasswordChange} 
                         />
                       </div>
-                       <img src={Eye} onClick={eyeToggle}/>
+                      <Icon className="svg-icon" icon="password-eye" onClick={eyeToggle}/>
                     </div>
                     
                     {pwdError && <p className='invalid'>Password must be at least 6 characters long and contain at
