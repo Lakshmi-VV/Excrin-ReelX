@@ -1,0 +1,314 @@
+:root{
+  --outer-background-color:#FAFAFA;
+  --inner-background-color:white;
+  --title-color:#09090B;
+  --input-border:#D4D4D8;
+  --input-background-color:white;
+  --forgot-pass:#A1A1AA;
+  --pageNum:#09090B;
+  --svg-color:#18181B;
+  --invalid-color:red;
+  --signin-signup:#FAFAFA;
+  --sign-btn:#18181B;
+  --reset-color:#09090B;
+}
+
+.dark-theme{
+  --outer-background-color:#18181B;
+  --inner-background-color:#09090B;
+  --title-color:#FAFAFA;
+  --input-border: #52525B;
+  --input-background-color:#09090B;
+  --forgot-pass:#71717A;
+  --pageNum:#FAFAFA;
+  --svg-color:white;
+  --invalid-color:#FF7373;
+  --signin-signup:#18181B;
+  --sign-btn:#FAFAFA;
+  --reset-color:#FAFAFA;
+}
+ .svg-icon path{
+    stroke: var(--svg-color);
+ }
+ .sign-btn{
+ border-radius: 3px;
+ width: 152px;
+ height: 32px;
+ padding: 6px 12px;
+ background-color: var(--signin-signup);
+ color: var(--sign-btn);
+ font-family: sora;
+ font-size: 14px;
+ font-weight: 500;
+ border: none;
+ }
+ .buttonStyle {
+  background-color: var(--sign-btn);
+  color: var(--signin-signup);
+}
+.buttonOther {
+  font-weight: 400;
+}
+.strength-bars div{
+  height: 5px;
+  width: 33%;
+  margin: 2px;
+  border-radius: 5px;
+}
+.strength-bars div.active {
+  background-color: #27272A;
+}
+.strength-bars div.inactive {
+  background-color: lightgray;
+}
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+.font{
+font-family: "Sora", sans-serif;
+}
+.header{
+padding:16px 40px ;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: var(--input-background-color);
+}
+.header-help{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.help{
+  font-size: 14px;
+  color: var(--title-color);
+}
+
+.signUp-container{
+background-color: var(--outer-background-color);
+height: 90vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.inner-container{
+background-color: var(--inner-background-color);
+width: 400px;
+display: flex;
+flex-direction: column;
+gap: 32px;
+border-radius: 12px;
+padding: 32px 40px;
+}
+.sign{
+background-color: var(--signin-signup);
+border-radius: 6px;
+padding: 8px;
+height: 48px;
+width: 330px;
+display: flex;
+gap: 10px;
+}
+
+.title{
+color: var(--title-color);
+font-size: 20px;
+font-weight: 600;
+text-align: center;
+}
+.google{
+display: flex;
+padding: 8px 12px;
+gap: 8px;
+background-color: var(--inner-background-color);
+color: var(--title-color);
+border: 1px solid var(--input-border);
+border-radius: 6px;
+justify-content: center;
+}
+.google p{
+font-family: sora;
+font-weight: 400;
+font-size: 14px;
+}
+.border{
+background-color: var(--input-border);
+height: 1px;
+}
+.form{
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.input{
+border:1px solid var(--input-border);
+border-radius: 6px;
+color: var(--title-color);
+font-size: 14px;
+font-weight: 400;
+padding: 10px 12px;
+display: flex;
+gap: 8px;
+}
+input{
+border: none;
+height: 20px;
+background-color: var(--input-background-color);
+color: var(--title-color);
+}
+input::placeholder{
+font-family: sora;
+}
+input:focus{
+outline: none;
+}
+.mail-continue{
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.btn{
+background-color: #27272A;
+padding: 8px 24px;
+border: none;
+width: 320px;
+border-radius: 6px;
+font-size: 14px;
+font-weight: 400;
+color: white;
+font-family: sora
+}
+.password{
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+.forgot-pass{
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+text-align: right;
+color:var(--forgot-pass);
+}
+.forgot-pass-link{
+text-decoration: none;
+}
+.pass-input{
+display: flex;
+justify-content: space-between;
+}
+.pass-icon-text{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+.withpass{
+display: flex;
+flex-direction: column;
+gap: 34px;
+}
+.tac{
+color: #A1A1AA;
+font-size: 13px;
+font-weight: 400;
+line-height: 14px;
+text-align: left;
+}
+.span-tac{
+color: var(--title-color);
+}
+.checkbox{
+display: flex;
+gap: 12px;
+align-items: center;
+justify-content: center;
+}
+.checkbox-icon{
+width: 28px;
+height: 24px;
+background-image: url('../src/icons/checkbox.svg');
+background-size: cover;
+background-position: center;
+position: relative;
+}
+.check-tick{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+}
+.invalid{
+color: var(--invalid-color);
+font-size: 12px;
+text-align: right;
+}
+.mail-invalid{
+display: flex;
+flex-direction: column;
+gap: 3px;
+}
+.strength-bars {
+display: flex;
+width: 50%;
+}
+.password-strength{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.reset-nav{
+display: flex;
+justify-content: space-between;
+}
+.pageNum{
+display: flex;
+color: var(--pageNum);
+gap: 3px;
+}
+.page {
+font-weight: normal;
+color: #71717A;
+}
+.reset-title{
+text-align: left;
+}
+.instructions{
+font-size: 14px;
+color: #ccc;
+line-height: 22px;
+}
+.reset-bold{
+font-weight: bold;
+color: var(--reset-color);
+}
+.reset-edit{
+display: flex;
+gap: 7px;
+}
+.code-section{
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.code-enter{
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.code-box{
+display: flex;
+gap: 24px;
+}
+.code-box input{
+width: 62px;
+height: 48px;
+border: 1px solid var(--input-border);
+border-radius: 6px;
+padding: 24px;
+font-size:large;
+}
