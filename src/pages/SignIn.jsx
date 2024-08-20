@@ -76,12 +76,14 @@ function SignIn() {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    const isEmailValid = handleValidation("email", signInForm.email);
-    const isPasswordValid = handleValidation("password", signInForm.password);
-    if (isEmailValid && isPasswordValid) {
-      return true;
-    }
+    const formFields = ["email", "password"];
+    formFields.forEach((field) => {
+      if (handleValidation(field, signInForm[field])) {
+        return true;
+      }
+    });
   };
+
   return (
     <>
       <div className="signUp-container">
