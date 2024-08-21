@@ -55,27 +55,6 @@ const Icon = ({ icon, className, width, height, ...props }) => {
           />
         </svg>
       );
-    case "checkbox":
-      return (
-        <svg
-          width={props.width || "20"}
-          height={props.height || "20"}
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={className}
-          {...props}
-        >
-          <path
-            d="M17 1H3C1.89543 1 1 1.89543 1 3V17C1 18.1046 1.89543 19 3 19H17C18.1046 19 19 18.1046 19 17V3C19 1.89543 18.1046 1 17 1Z"
-            fill="#FAFAFA"
-            stroke="#D4D4D8"
-            stroke-width="0.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      );
     case "edit":
       return (
         <svg

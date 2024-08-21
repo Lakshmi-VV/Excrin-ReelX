@@ -241,11 +241,11 @@ function SignUp() {
 
                 <div className="checkbox-consent">
                   <div
-                    className="checkbox-icon"
+                    className="checkbox"
                     onClick={() => iconToggle("consent")}
                   >
                     {toggle.consent && (
-                      <Icon icon="tick" className="check-tick" />
+                      <Icon icon="tick" className="check-tick svg-icon" />
                     )}
                   </div>
 

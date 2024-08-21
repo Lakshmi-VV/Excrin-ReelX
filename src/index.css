@@ -218,12 +218,12 @@
   align-items: center;
   justify-content: center;
 }
-.checkbox-icon {
+.checkbox {
   width: 18px;
   height: 18px;
-  background-image: url("../src/icons/checkbox.svg");
-  background-size: cover;
-  background-position: center;
+  border: 1px solid var(--muted-foreground);
+  border-radius: 3px;
+  background-color: var(--secondary);
   position: relative;
 }
 .check-tick {
