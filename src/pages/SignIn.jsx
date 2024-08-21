@@ -18,7 +18,7 @@ function SignIn() {
     },
   });
   const [toggle, setToggle] = useState({
-    password: true,
+    passwordVisible: false,
   });
   const [step, setStep] = useState(1);
   const location = useLocation();
@@ -86,16 +86,16 @@ function SignIn() {
 
   return (
     <>
-      <div className="signUp-container">
+      <div className="outer-container">
         <div className="inner-container">
           {step === 1 ? (
             <>
-              <div className="sign">
+              <div className="signbtn-tab">
                 <Link to="/signup">
-                  <button className="buttonOther sign-btn">Sign up</button>
+                  <button className="buttonInactive sign-btn">Sign up</button>
                 </Link>
                 <Link to="/signin">
-                  <button className="buttonStyle sign-btn">Sign in</button>
+                  <button className="buttonActive sign-btn">Sign in</button>
                 </Link>
               </div>
 
@@ -111,9 +111,9 @@ function SignIn() {
 
                 <div className="border"></div>
 
-                <div className="mail-continue">
-                  <div className="mail-invalid">
-                    <div className="input">
+                <div className="mail-section">
+                  <div className="input-container">
+                    <div className="input-field">
                       <Icon className="svg-icon" icon="mail" />
                       <input
                         type="text"
@@ -123,22 +123,24 @@ function SignIn() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    {signInForm.errors.email && (
-                      <p className="invalid">{signInForm.errors.email}</p>
-                    )}
+                    <div>
+                      {signInForm.errors.email && (
+                        <p className="invalid">{signInForm.errors.email}</p>
+                      )}
+                    </div>
                   </div>
                   <button className="btn">Continue</button>
                 </div>
               </form>
             </>
           ) : (
-            <div className="signin withpass">
+            <div className=" signin-page">
               <div className="title">
                 <p>Enter your password</p>
               </div>
 
               <form className="form" onSubmit={handleSignIn}>
-                <div className="input">
+                <div className="input-field">
                   <Icon className="svg-icon" icon="mail" />
                   <input
                     type="text"
@@ -148,31 +150,39 @@ function SignIn() {
                   />
                 </div>
 
-                <div className="password">
-                  <div className="input pass-input">
-                    <div className="pass-icon-text">
-                      <Icon className="svg-icon" icon="password-lock" />
-                      <input
-                        type={toggle.password ? "text" : "password"}
-                        placeholder="Password"
-                        value={signInForm.password}
-                        name="password"
-                        onChange={handleInputChange}
-                      />
+                <div className="password-section">
+                  <div className="input-container">
+                    <div className="input-field password-input">
+                      <div className="pass-icon-text">
+                        <Icon className="svg-icon" icon="password-lock" />
+                        <input
+                          type={toggle.passwordVisible ? "text" : "password"}
+                          placeholder="Password"
+                          value={signInForm.password}
+                          name="password"
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div
+                        className="eye-icon"
+                        onClick={() => iconToggle("passwordVisible")}
+                      >
+                        {toggle.passwordVisible ? (
+                          <Icon icon="password-eyeOpen" className="svg-icon" />
+                        ) : (
+                          <Icon icon="password-eyeClose" className="svg-icon" />
+                        )}
+                      </div>
                     </div>
-                    <Icon
-                      className="svg-icon"
-                      icon="password-eye"
-                      onClick={() => iconToggle("password")}
-                    />
+                    <div>
+                      {signInForm.errors.password && (
+                        <p className="invalid">{signInForm.errors.password}</p>
+                      )}
+                    </div>
                   </div>
 
-                  {signInForm.errors.password && (
-                    <p className="invalid">{signInForm.errors.password}</p>
-                  )}
-
                   <Link to="/reset-password" className="forgot-pass-link">
-                    <p className="forgot-pass">Forgot password?</p>
+                    <p className="input-messages">Forgot password?</p>
                   </Link>
                 </div>
 

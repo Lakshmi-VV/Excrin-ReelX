@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Icon from "../components/icons";
@@ -17,7 +17,7 @@ function Reset() {
     },
   });
   const [toggle, setToggle] = useState({
-    password: true,
+    passwordVisible: false,
   });
   const [sendCode, setSendCode] = useState({
     code: ["", "", "", ""],
@@ -125,15 +125,11 @@ function Reset() {
   };
   return (
     <>
-      <div className="signUp-container">
+      <div className="outer-container">
         <div className="inner-container">
-          <div className="signin withpass">
+          <div className="reset-page">
             <div className="reset-nav">
-              <Icon
-                icon="arrow-left"
-                className="svg-icon"
-                onClick={handleBack}
-              />
+              <Icon icon="arrow-left" onClick={handleBack} />
               <div className="pageNum">
                 <p>
                   <span className="page">{pageNumber(step).step}</span> /{" "}
@@ -144,101 +140,121 @@ function Reset() {
 
             {step === 1 ? (
               <>
-                <div className="reset-title title">
+                <div className="reset-title">
                   <p>Reset password</p>
                 </div>
                 <div className="instructions">
-                  <p>Please enter your email to send the code.</p>
-                  <br />
-                  <div className="mail-continue">
-                    <div className="mail-invalid">
-                      <div
-                        className={`input ${
-                          resetForm.errors.email ? "invalid-input" : ""
-                        }`}
-                      >
-                        <Icon className="svg-icon" icon="mail" />
-                        <input
-                          type="text"
-                          placeholder="Pietro@gmail.com"
-                          name="email"
-                          value={resetForm.email}
-                          onChange={handleInputChange}
-                        />
-                      </div>
+                  <p>Enter your email to receive the verification code.</p>
+                </div>
+
+                <div className="mail-section">
+                  <div className="input-container">
+                    <div
+                      className={`input-field ${
+                        resetForm.errors.email ? "invalid-input" : ""
+                      }`}
+                    >
+                      <Icon className="svg-icon" icon="mail" />
+                      <input
+                        type="text"
+                        placeholder="Pietro@gmail.com"
+                        name="email"
+                        value={resetForm.email}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div>
                       {resetForm.errors.email && (
                         <p className="invalid">{resetForm.errors.email}</p>
                       )}
                     </div>
-                    <button className="btn" onClick={handleContinue}>
-                      Send Code
-                    </button>
                   </div>
                 </div>
+
+                <button className="btn" onClick={handleContinue}>
+                  Send Code
+                </button>
               </>
             ) : step === 2 ? (
               <>
-                <div className="code-section">
-                  <div className="code-enter">
-                    <p className="reset-bold">Code</p>
-                    <p className="instructions">Enter the code</p>
-                    <div className="code-box">
-                      {sendCode.code.map((digit, index) => (
-                        <input
-                          key={index}
-                          id={`code-${index}`}
-                          type="text"
-                          maxLength="1"
-                          value={digit}
-                          onChange={(e) => handleChange(e, index)}
-                          className="code-input"
-                          placeholder="*"
-                        />
-                      ))}
-                    </div>
-                    <p className="forgot-pass">
-                      Resend in {sendCode.seconds} sec
-                    </p>
-                  </div>
-                  <button
-                    className="btn"
-                    onClick={handleContinue}
-                    disabled={!sendCode.isCodeComplete}
-                  >
-                    Continue
-                  </button>
+                <div className="reset-title">
+                  <p>Reset password</p>
                 </div>
+
+                <div>
+                  {/* <p className="reset-boldText">Code</p> */}
+                  <p className="instructions">
+                    Enter the code we sent to your email to verify your account.
+                  </p>
+                </div>
+
+                <div className="code-section">
+                  <div className="code-box">
+                    {sendCode.code.map((digit, index) => (
+                      <input
+                        key={index}
+                        id={`code-${index}`}
+                        type="text"
+                        maxLength="1"
+                        value={digit}
+                        onChange={(e) => handleChange(e, index)}
+                        className="code-input"
+                        placeholder="*"
+                      />
+                    ))}
+                  </div>
+                  <p className="input-messages">
+                    Resend in {sendCode.seconds} sec
+                  </p>
+                </div>
+
+                <button
+                  className="btn"
+                  onClick={handleContinue}
+                  disabled={!sendCode.isCodeComplete}
+                >
+                  Continue
+                </button>
               </>
             ) : (
               <>
-                <div className="reset-title title">
+                <div className="reset-title">
                   <p>Reset Password</p>
                 </div>
-                <div className="password">
-                  <div
-                    className={`input ${
-                      resetForm.errors.password ? "invalid-input" : ""
-                    } pass-input`}
-                  >
-                    <div className="pass-icon-text">
-                      <Icon icon="password-lock" className="svg-icon" />
-                      <input
-                        type={toggle.password ? "text" : "password"}
-                        placeholder="Password"
-                        name="password"
-                        value={resetForm.password}
-                        onChange={handleInputChange}
-                      />
+                <div className="password-section">
+                  <div className="input-container">
+                    <div
+                      className={`input-field ${
+                        resetForm.errors.password ? "invalid-input" : ""
+                      } password-input`}
+                    >
+                      <div className="pass-icon-text">
+                        <Icon icon="password-lock" className="svg-icon" />
+                        <input
+                          type={toggle.passwordVisible ? "text" : "password"}
+                          placeholder="Password"
+                          name="password"
+                          value={resetForm.password}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div
+                        className="eye-icon"
+                        onClick={() => iconToggle("passwordVisible")}
+                      >
+                        {toggle.passwordVisible ? (
+                          <Icon icon="password-eyeOpen" className="svg-icon" />
+                        ) : (
+                          <Icon icon="password-eyeClose" className="svg-icon" />
+                        )}
+                      </div>
                     </div>
-                    <Icon
-                      icon="password-eye"
-                      className="svg-icon"
-                      onClick={() => iconToggle("password")}
-                    />
+                    <div>
+                      {resetForm.errors.password && (
+                        <p className="invalid">{resetForm.errors.password}</p>
+                      )}
+                    </div>
                   </div>
-                  {resetForm.errors.password && (
-                    <p className="invalid">{resetForm.errors.password}</p>
-                  )}
                 </div>
                 <button className="btn" onClick={handleContinue}>
                   Updated password

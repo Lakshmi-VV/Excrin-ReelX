@@ -20,7 +20,7 @@ function SignUp() {
   });
   const [toggle, setToggle] = useState({
     consent: true,
-    password: true,
+    passwordVisible: false,
   });
   const [step, setStep] = useState(1);
   const [PasswordStrength, setPasswordStrength] = useState(0);
@@ -96,16 +96,16 @@ function SignUp() {
 
   return (
     <>
-      <div className="signUp-container">
+      <div className="outer-container">
         <div className="inner-container">
           {step === 1 ? (
             <>
-              <div className="sign">
+              <div className="signbtn-tab">
                 <Link to="/signup">
-                  <button className="buttonStyle sign-btn">Sign up</button>
+                  <button className="buttonActive sign-btn">Sign up</button>
                 </Link>
                 <Link to="/signin">
-                  <button className="buttonOther sign-btn">Sign in</button>
+                  <button className="buttonInactive sign-btn">Sign in</button>
                 </Link>
               </div>
 
@@ -121,10 +121,10 @@ function SignUp() {
 
                 <div className="border"></div>
 
-                <div className="mail-continue">
-                  <div className="mail-invalid">
+                <div className="mail-section">
+                  <div className="input-container">
                     <div
-                      className={`input ${
+                      className={`input-field ${
                         signUpForm.errors.email ? "invalid-input" : ""
                       }`}
                     >
@@ -137,22 +137,24 @@ function SignUp() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    {signUpForm.errors.email && (
-                      <p className="invalid">{signUpForm.errors.email}</p>
-                    )}
+                    <div>
+                      {signUpForm.errors.email && (
+                        <p className="invalid">{signUpForm.errors.email}</p>
+                      )}
+                    </div>
                   </div>
                   <button className="btn">Continue</button>
                 </div>
               </form>
             </>
           ) : (
-            <div className="signup withpass">
+            <div className="signup-page">
               <div className="title">
                 <p>Create an Account</p>
               </div>
 
               <form className="form" onSubmit={handleSignUp}>
-                <div className="input">
+                <div className="input-field">
                   <Icon icon="mail" className="svg-icon" />
                   <input
                     type="text"
@@ -161,9 +163,10 @@ function SignUp() {
                     value={signUpForm.email}
                   />
                 </div>
-                <div className="mail-input">
+
+                <div className="input-container">
                   <div
-                    className={`input ${
+                    className={`input-field ${
                       signUpForm.errors.name ? "invalid-input" : ""
                     } `}
                   >
@@ -176,37 +179,48 @@ function SignUp() {
                       onChange={handleInputChange}
                     />
                   </div>
-                  {signUpForm.errors.name && (
-                    <p className="invalid">{signUpForm.errors.name}</p>
-                  )}
+                  <div>
+                    {signUpForm.errors.name && (
+                      <p className="invalid">{signUpForm.errors.name}</p>
+                    )}
+                  </div>
                 </div>
 
-                <div className="password">
-                  <div
-                    className={`input ${
-                      signUpForm.errors.password ? "invalid-input" : ""
-                    } pass-input`}
-                  >
-                    <div className="pass-icon-text">
-                      <Icon icon="password-lock" className="svg-icon" />
+                <div className="password-section">
+                  <div className="input-container">
+                    <div
+                      className={`input-field ${
+                        signUpForm.errors.password ? "invalid-input" : ""
+                      } password-input`}
+                    >
+                      <div className="pass-icon-text">
+                        <Icon icon="password-lock" className="svg-icon" />
 
-                      <input
-                        type={toggle.password ? "text" : "password"}
-                        placeholder="Password"
-                        value={signUpForm.password}
-                        name="password"
-                        onChange={handleInputChange}
-                      />
+                        <input
+                          type={toggle.passwordVisible ? "text" : "password"}
+                          placeholder="Password"
+                          value={signUpForm.password}
+                          name="password"
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div
+                        className="eye-icon"
+                        onClick={() => iconToggle("passwordVisible")}
+                      >
+                        {toggle.passwordVisible ? (
+                          <Icon icon="password-eyeOpen" className="svg-icon" />
+                        ) : (
+                          <Icon icon="password-eyeClose" className="svg-icon" />
+                        )}
+                      </div>
                     </div>
-                    <Icon
-                      icon="password-eye"
-                      className="svg-icon"
-                      onClick={() => iconToggle("password")}
-                    />
+                    <div>
+                      {signUpForm.errors.password && (
+                        <p className="invalid">{signUpForm.errors.password}</p>
+                      )}
+                    </div>
                   </div>
-                  {signUpForm.errors.password && (
-                    <p className="invalid">{signUpForm.errors.password}</p>
-                  )}
 
                   <div className="password-strength">
                     <div className="strength-bars">
@@ -220,25 +234,25 @@ function SignUp() {
                       ))}
                     </div>
                     <div>
-                      <p className="forgot-pass">Password strength</p>
+                      <p className="input-messages">Password strength</p>
                     </div>
                   </div>
+                </div>
 
-                  <div className="checkbox">
-                    <div
-                      className="checkbox-icon"
-                      onClick={() => iconToggle("consent")}
-                    >
-                      {toggle.consent && (
-                        <Icon icon="tick" className="check-tick" />
-                      )}
-                    </div>
-
-                    <p className="tac">
-                      By agreeing this you are accepting the{" "}
-                      <span className="span-tac">T&C </span>of ReelX
-                    </p>
+                <div className="checkbox-consent">
+                  <div
+                    className="checkbox-icon"
+                    onClick={() => iconToggle("consent")}
+                  >
+                    {toggle.consent && (
+                      <Icon icon="tick" className="check-tick" />
+                    )}
                   </div>
+
+                  <p className="terms-condition">
+                    By agreeing this you are accepting the
+                    <span className="span-terms-condition"> T&C </span>of ReelX
+                  </p>
                 </div>
 
                 <button className="btn">Sign Up</button>
