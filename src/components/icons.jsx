@@ -771,7 +771,47 @@ const Icon = ({ icon, className, width, height, ...props }) => {
           />
         </svg>
       );
-
+    case "artboard-closebtn":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          {...props}
+        >
+          <path
+            d="M2.50049 12C2.50049 7.52166 2.50049 5.28249 3.89173 3.89124C5.28298 2.5 7.52215 2.5 12.0005 2.5C16.4788 2.5 18.718 2.5 20.1093 3.89124C21.5005 5.28249 21.5005 7.52166 21.5005 12C21.5005 16.4783 21.5005 18.7175 20.1093 20.1088C18.718 21.5 16.4788 21.5 12.0005 21.5C7.52215 21.5 5.28298 21.5 3.89173 20.1088C2.50049 18.7175 2.50049 16.4783 2.50049 12Z"
+            fill="#FBE5E7"
+          />
+          <path
+            d="M15 9L9 14.9996M15 15L9 9.00039"
+            stroke="#DC3545"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    case "back-left":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
     default:
       return null;
   }
