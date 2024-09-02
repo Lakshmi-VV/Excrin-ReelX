@@ -63,6 +63,11 @@ function Reset() {
     return error === null;
   };
 
+  const user = JSON.parse(localStorage.getItem("userDetails")).find(
+    (user) => user.email === resetForm.email
+  );
+  const username = user ? user.name : null;
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setResetForm((prev) => ({
@@ -70,6 +75,18 @@ function Reset() {
       [name]: value,
       errors: { ...prev.errors, [name]: null },
     }));
+    if (name === "password") {
+      updateLocalStorage(resetForm.email, value);
+    }
+  };
+
+  const updateLocalStorage = (email, password) => {
+    const existingUsers = JSON.parse(localStorage.getItem("userDetails")) || [];
+    const existingUser = existingUsers.find((user) => user.email === email);
+    if (existingUser) {
+      existingUser.password = password;
+      localStorage.setItem("userDetails", JSON.stringify(existingUsers));
+    }
   };
 
   const handleChange = (e, index) => {
@@ -103,6 +120,11 @@ function Reset() {
     }
     if (step === 2) {
       setStep(3);
+    }
+    if (step == 3) {
+      if (iSValid) {
+        navigate("/dashboard", { state: { username } });
+      }
     }
   };
 

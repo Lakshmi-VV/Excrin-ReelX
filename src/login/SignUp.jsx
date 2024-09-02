@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Icon from "../components/icons";
 import Google from "../icons/google.svg";
@@ -12,6 +13,7 @@ function SignUp() {
       email: "",
       password: "",
       name: "",
+      user: "",
     },
     validation: {
       email: new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"),
@@ -24,6 +26,8 @@ function SignUp() {
   });
   const [step, setStep] = useState(1);
   const [PasswordStrength, setPasswordStrength] = useState(0);
+
+  const navigate = useNavigate();
 
   const iconToggle = (type) => {
     setToggle((prev) => ({ ...prev, [type]: !prev[type] }));
@@ -87,11 +91,32 @@ function SignUp() {
   const handleSignUp = (e) => {
     e.preventDefault();
     const formFields = ["email", "name", "password"];
-    formFields.forEach((field) => {
-      if (handleValidation(field, signUpForm[field])) {
-        return true;
+    const isValid = formFields.every((field) =>
+      handleValidation(field, signUpForm[field])
+    );
+    if (isValid) {
+      const existingUsers =
+        JSON.parse(localStorage.getItem("userDetails")) || [];
+      const existingUser = existingUsers.find(
+        (user) =>
+          user.email === signUpForm.email || user.name === signUpForm.name
+      );
+      if (existingUser) {
+        setSignUpForm((prev) => ({
+          ...prev,
+          errors: {
+            ...prev.errors,
+            user: "User already exists",
+          },
+        }));
+        return;
       }
-    });
+      const newUser = { ...signUpForm };
+      existingUsers.push(newUser);
+      localStorage.setItem("userDetails", JSON.stringify(existingUsers));
+
+      navigate("/dashboard", { state: { username: signUpForm.name } });
+    }
   };
 
   return (
@@ -153,7 +178,7 @@ function SignUp() {
                 <p>Create an Account</p>
               </div>
 
-              <form className="form" onSubmit={handleSignUp}>
+              <form className="form">
                 <div className="input-field">
                   <Icon icon="mail" className="svg-icon" />
                   <input
@@ -255,7 +280,12 @@ function SignUp() {
                   </p>
                 </div>
 
-                <button className="btn">Sign Up</button>
+                <button className="btn" onClick={handleSignUp}>
+                  Sign Up
+                </button>
+                {signUpForm.errors.user && (
+                  <p className="invalid">{signUpForm.errors.user}</p>
+                )}
               </form>
             </div>
           )}

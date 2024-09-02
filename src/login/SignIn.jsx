@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Google from "../icons/google.svg";
 import Icon from "../components/icons";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
   const [signInForm, setSignInForm] = useState({
@@ -11,6 +12,7 @@ function SignIn() {
     errors: {
       email: "",
       password: "",
+      invalid_user: "",
     },
     validation: {
       email: new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"),
@@ -22,6 +24,7 @@ function SignIn() {
   });
   const [step, setStep] = useState(1);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state && location.state.showPasswordSection) {
@@ -77,11 +80,34 @@ function SignIn() {
   const handleSignIn = (e) => {
     e.preventDefault();
     const formFields = ["email", "password"];
-    formFields.forEach((field) => {
-      if (handleValidation(field, signInForm[field])) {
-        return true;
+    const isValid = formFields.every((field) =>
+      handleValidation(field, signInForm[field])
+    );
+
+    const username = JSON.parse(localStorage.getItem("userDetails")).find(
+      (user) => user.email === signInForm.email
+    ).name;
+
+    if (isValid) {
+      const existingUsers =
+        JSON.parse(localStorage.getItem("userDetails")) || [];
+      const existingUser = existingUsers.find(
+        (user) =>
+          user.email === signInForm.email &&
+          user.password === signInForm.password
+      );
+      if (existingUser) {
+        navigate("/dashboard", { state: { username } });
+      } else {
+        setSignInForm((prev) => ({
+          ...prev,
+          errors: {
+            ...prev.errors,
+            invalid_user: "Invalid email or password",
+          },
+        }));
       }
-    });
+    }
   };
 
   return (
@@ -139,7 +165,7 @@ function SignIn() {
                 <p>Enter your password</p>
               </div>
 
-              <form className="form" onSubmit={handleSignIn}>
+              <form className="form">
                 <div className="input-field">
                   <Icon className="svg-icon" icon="mail" />
                   <input
@@ -181,12 +207,17 @@ function SignIn() {
                     </div>
                   </div>
 
-                  <Link to="/reset-password" className="forgot-pass-link">
+                  <Link to="/reset-password" className="link-button">
                     <p className="input-messages">Forgot password?</p>
                   </Link>
                 </div>
 
-                <button className="btn">Continue</button>
+                <button className="btn" onClick={handleSignIn}>
+                  Continue
+                </button>
+                {signInForm.errors.invalid_user && (
+                  <p className="invalid">{signInForm.errors.invalid_user}</p>
+                )}
               </form>
             </div>
           )}
