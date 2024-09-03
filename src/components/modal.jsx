@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Icon from "./icons";
 import "../homePage/newspacePopup.css";
+import User1 from "../images/user1.png";
+import User2 from "../images/user2.png";
+import User3 from "../images/user3.png";
 
 export const NewSpacePopup = ({
   projectName,
@@ -214,10 +217,15 @@ export const ArtboardShare = ({ close }) => {
           </div>
           <div className="artboard-popup-comments__users">
             <p>Recents users from your organisation</p>
-            <div>
-              <img />
-              <img />
-              <img />
+            <div className="artboard-popup-comments__users-images">
+              <img src={User1} alt="user1" />
+              {/* <div className="user_status">
+                
+                <Icon icon="user-status" className="status" />
+              </div> */}
+
+              <img src={User2} alt="user2" />
+              <img src={User3} alt="user3" />
             </div>
           </div>
         </div>
