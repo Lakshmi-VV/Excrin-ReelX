@@ -11,6 +11,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg "
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -37,6 +38,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -64,6 +66,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -93,6 +96,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -124,6 +128,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -144,6 +149,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M18.3337 6.66675C18.3337 6.66675 15.0003 11.6667 10.0003 11.6667C5.00033 11.6667 1.66699 6.66675 1.66699 6.66675"
@@ -186,6 +194,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -217,6 +226,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -237,6 +247,7 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -260,6 +271,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          style={style}
+          {...props}
         >
           <g id="Icons">
             <path
@@ -297,6 +311,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          style={style}
+          {...props}
         >
           <g id="Icons">
             <path
@@ -341,6 +358,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          style={style}
+          {...props}
         >
           <g id="Icons">
             <path
@@ -368,6 +388,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M6 12L10 8L6 4"
@@ -386,6 +409,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M7 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7"
@@ -403,6 +429,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "20"}
           viewBox="0 0 21 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M10.3301 10H10.3376"
@@ -435,6 +464,8 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
           {...props}
         >
           <path
@@ -467,6 +498,8 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
           {...props}
         >
           <path
@@ -497,6 +530,9 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "12"}
           viewBox="0 0 12 12"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M6 2V10"
@@ -520,6 +556,8 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
           height={props.height || "14"}
           viewBox="0 0 14 14"
           fill="none"
+          className={className}
+          style={style}
           {...props}
         >
           <path
@@ -759,10 +797,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width={props.width || "16"}
+          height={props.height || "16"}
           viewBox="0 0 16 16"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M12 6.00003C12 6.00003 9.05407 10 8 10C6.94587 10 4 6 4 6"
@@ -777,10 +818,12 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={props.width || "24"}
+          height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
           {...props}
         >
           <path
@@ -800,10 +843,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={props.width || "24"}
+          height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18"
@@ -818,11 +864,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="6"
-          height="6"
+          width={props.width || "6"}
+          height={props.height || "6"}
           viewBox="0 0 6 6"
           fill="none"
           className={className}
+          style={style}
+          {...props}
         >
           <circle cx="3" cy="3" r="3" fill="#22C55E" />
         </svg>
@@ -831,10 +879,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width={props.width || "16"}
+          height={props.height || "16"}
           viewBox="0 0 16 16"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M4 6L8 10L12 6"
@@ -849,12 +900,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width={props.width || "16"}
+          height={props.height || "16"}
           viewBox="0 0 16 16"
           fill="none"
           className={className}
           style={style}
+          {...props}
         >
           <path
             d="M2.40002 10C2.40002 10 3.60002 10 5.20002 12.8C5.20002 12.8 9.64707 5.46666 13.6 4"
@@ -869,10 +921,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="24"
+          width={props.width || "25"}
+          height={props.height || "24"}
           viewBox="0 0 25 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M21.1906 18C21.9399 18 22.5359 17.5285 23.0711 16.8691C24.1665 15.5194 22.3679 14.4408 21.682 13.9126C20.9846 13.3756 20.206 13.0714 19.4166 13M18.4166 11C19.7973 11 20.9166 9.88071 20.9166 8.5C20.9166 7.11929 19.7973 6 18.4166 6"
@@ -904,16 +959,19 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M18.4375 6.52083H1.5625C1.32491 6.52083 1.09705 6.42645 0.92905 6.25845C0.761049 6.09045 0.666667 5.86259 0.666667 5.625C0.666667 5.38741 0.761049 5.15955 0.92905 4.99155C1.09705 4.82355 1.32491 4.72917 1.5625 4.72917H18.4375C18.6751 4.72917 18.9029 4.82355 19.0709 4.99155C19.239 5.15955 19.3333 5.38741 19.3333 5.625C19.3333 5.86259 19.239 6.09045 19.0709 6.25845C18.9029 6.42645 18.6751 6.52083 18.4375 6.52083ZM15.3125 10.8958H4.6875C4.44991 10.8958 4.22205 10.8015 4.05405 10.6334C3.88605 10.4654 3.79167 10.2376 3.79167 10C3.79167 9.76241 3.88605 9.53455 4.05405 9.36655C4.22205 9.19855 4.44991 9.10417 4.6875 9.10417H15.3125C15.5501 9.10417 15.7779 9.19855 15.9459 9.36655C16.114 9.53455 16.2083 9.76241 16.2083 10C16.2083 10.2376 16.114 10.4654 15.9459 10.6334C15.7779 10.8015 15.5501 10.8958 15.3125 10.8958ZM11.5625 15.2708H8.4375C8.19991 15.2708 7.97205 15.1765 7.80405 15.0084C7.63605 14.8404 7.54167 14.6126 7.54167 14.375C7.54167 14.1374 7.63605 13.9096 7.80405 13.7416C7.97205 13.5735 8.19991 13.4792 8.4375 13.4792H11.5625C11.8001 13.4792 12.0279 13.5735 12.1959 13.7416C12.364 13.9096 12.4583 14.1374 12.4583 14.375C12.4583 14.6126 12.364 14.8404 12.1959 15.0084C12.0279 15.1765 11.8001 15.2708 11.5625 15.2708Z"
             fill="#27272A"
             stroke="white"
-            stroke-width="0.0833333"
+            stroke-width="0.3833333"
           />
         </svg>
       );
@@ -921,10 +979,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <g clip-path="url(#clip0_619_3063)">
             <path
@@ -945,10 +1006,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <g clip-path="url(#clip0_619_3067)">
             <path
@@ -969,10 +1033,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M14.5834 14.5835L18.3334 18.3335"
@@ -993,10 +1060,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
+          width={props.width || "44px"}
+          height={props.height || "44px"}
           viewBox="0 0 44 44"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <rect
             x="0.5"
@@ -1050,10 +1120,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
+          width={props.width || "44"}
+          height={props.height || "44"}
           viewBox="0 0 44 44"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <rect
             x="0.5"
@@ -1079,6 +1152,148 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
             d="M14 26.9995C14 25.9494 14 25.4243 14.2044 25.0233C14.3841 24.6705 14.671 24.3836 15.0238 24.2039C15.4249 23.9995 15.9499 23.9995 17 23.9995C18.0501 23.9995 18.5751 23.9995 18.9762 24.2039C19.329 24.3836 19.6159 24.6705 19.7956 25.0233C20 25.4243 20 25.9494 20 26.9995C20 28.0496 20 28.5747 19.7956 28.9757C19.6159 29.3285 19.329 29.6154 18.9762 29.7952C18.5751 29.9995 18.0501 29.9995 17 29.9995C15.9499 29.9995 15.4249 29.9995 15.0238 29.7952C14.671 29.6154 14.3841 29.3285 14.2044 28.9757C14 28.5747 14 28.0496 14 26.9995Z"
             stroke="#27272A"
             stroke-width="1.5"
+          />
+        </svg>
+      );
+    case "clock":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={props.width || "14"}
+          height={props.height || "14"}
+          viewBox="0 0 14 14"
+          fill="none"
+          className={className}
+          style={style}
+          {...props}
+        >
+          <path
+            d="M6.99996 12.8332C10.2216 12.8332 12.8333 10.2215 12.8333 6.99984C12.8333 3.77818 10.2216 1.1665 6.99996 1.1665C3.7783 1.1665 1.16663 3.77818 1.16663 6.99984C1.16663 10.2215 3.7783 12.8332 6.99996 12.8332Z"
+            stroke="#023876"
+            stroke-width="1.5"
+          />
+          <path
+            d="M7 4.6665V6.99984L8.16667 8.1665"
+            stroke="#023876"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    case "resolve-check":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={props.width || "20"}
+          height={props.height || "20"}
+          viewBox="0 0 20 20"
+          fill="none"
+          className={className}
+          style={style}
+          {...props}
+        >
+          <path
+            d="M18.3333 9.99984C18.3333 5.39746 14.6023 1.6665 9.99996 1.6665C5.39758 1.6665 1.66663 5.39746 1.66663 9.99984C1.66663 14.6022 5.39758 18.3332 9.99996 18.3332C14.6023 18.3332 18.3333 14.6022 18.3333 9.99984Z"
+            fill="#00B8A8"
+          />
+          <path
+            d="M6.66663 10.6248C6.66663 10.6248 7.99996 11.3853 8.66663 12.4998C8.66663 12.4998 10.6666 8.12484 13.3333 6.6665"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    case "comment-reply":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={props.width || "20"}
+          height={props.height || "20"}
+          viewBox="0 0 20 20"
+          fill="none"
+          className={className}
+          style={style}
+          {...props}
+        >
+          <path
+            d="M7.08337 12.0832H12.9167M7.08337 7.9165H10"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.8088 17.4089C15.2946 17.1772 18.0713 14.3612 18.2998 10.8259C18.3445 10.1341 18.3445 9.41758 18.2998 8.72575C18.0713 5.19048 15.2946 2.37444 11.8088 2.14272C10.6195 2.06367 9.37796 2.06384 8.19112 2.14272C4.70528 2.37444 1.92863 5.19048 1.70016 8.72575C1.65545 9.41758 1.65545 10.1341 1.70016 10.8259C1.78337 12.1135 2.35282 13.3057 3.02322 14.3123C3.41247 15.0171 3.15557 15.8967 2.75013 16.665C2.4578 17.219 2.31163 17.496 2.42899 17.6961C2.54636 17.8962 2.80851 17.9026 3.33282 17.9153C4.36968 17.9406 5.06886 17.6466 5.62386 17.2373C5.93862 17.0052 6.09602 16.8892 6.20449 16.8758C6.31296 16.8625 6.52643 16.9504 6.9533 17.1262C7.33696 17.2842 7.78242 17.3817 8.19112 17.4089C9.37796 17.4878 10.6195 17.488 11.8088 17.4089Z"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    case "step-progress":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={props.width || "13"}
+          height={props.width || "14"}
+          viewBox="0 0 13 14"
+          fill="none"
+          className={className}
+          style={style}
+          {...props}
+        >
+          <circle
+            cx="6.5"
+            cy="7"
+            r="4.5"
+            fill="#27272A"
+            stroke="#A1A1AA"
+            stroke-width="4"
+          />
+        </svg>
+      );
+    case "sun":
+      return (
+        <svg
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 270 270"
+          width={props.width || "22px"}
+          height={props.height || "22px"}
+          className={className}
+          style={style}
+          {...props}
+        >
+          <path
+            class="cls-1"
+            fill="#fff"
+            d="M134.51,90.89c-24.28.15-43.91,19.77-43.73,43.69.19,24.89,19.68,44.46,44.2,44.38,23.75-.07,44.1-20.38,43.94-43.84-.17-24.73-19.91-44.39-44.41-44.24Z"
+          />
+          <path
+            class="cls-1"
+            fill="#fff"
+            d="M249.68,129.05c-.87-.71-1.91-1.33-3.04-1.88-.65-.32-1.29-.64-1.94-.96-12.28-6.79-25.14-12.44-37.61-18.86-.01-.01-.02-.02-.03-.02-.08-.04-.17-.09-.25-.13-2.37-1.22-1.8-2.54-1.15-4.45,4.6-13.66,9.02-27.38,13.66-41.02,1.28-3.77,1.48-7.25-1.47-10.15-1.84-1.81-3.91-2.32-6.13-2.11-1.16.1-2.35.41-3.58.83-13.33,4.55-26.76,8.83-40.08,13.41-2.75.95-4.29,1.01-5.73-1.31-.01-.02-.02-.03-.03-.05-.05-.08-.09-.17-.15-.26-.06-.13-.13-.26-.19-.4-.75-1.57-1.51-3.13-2.27-4.69-.03-.07-.07-.14-.1-.21-1.34-2.77-2.7-5.52-4.06-8.28-.15-.29-.29-.58-.43-.87-3.85-7.78-7.75-15.55-11.54-23.36-.81-1.68-1.73-3.19-2.89-4.36-1.48-1.51-3.36-2.46-5.95-2.49-4.63-.05-6.42,3.34-8.16,6.89-6.05,12.33-12.34,24.55-18.23,36.94-1.52,3.2-2.95,3.84-6.26,2.71-13.31-4.58-26.75-8.75-40.03-13.37-1.86-.65-4.11-.07-5.81-1.15-1.09.13-2.15.47-3.16,1.09-.57.34-1.12.77-1.66,1.3-.56.55-.99,1.1-1.31,1.67-.56.97-.81,1.97-.85,2.99t0,.02c-.08,1.93.57,3.93,1.26,5.96,1.08,3.16,2.14,6.32,3.19,9.48.03.09.06.19.1.28,1.03,3.18,2.1,6.35,3.18,9.52.06.15.11.3.16.45,2.43,7.02,4.93,14.02,7.21,21.09.99,3.08-.57,3.69-2.52,4.66-12.59,6.25-25.15,12.56-37.76,18.76-.91.45-1.8.91-2.61,1.43t-.02.02c-.66.41-1.28.86-1.81,1.38-1.38,1.32-2.26,3.02-2.22,5.48.04,2.57,1.03,4.34,2.56,5.71,1.15,1.05,2.59,1.86,4.15,2.63,1.76.86,3.51,1.73,5.27,2.6,4.97,2.62,10.02,5.1,15.09,7.55,5.65,2.83,11.32,5.64,17.02,8.38,1.59.76,2.53,1.47,2.91,2.44,0,0,.01.01.01.02.23.9-.15,1.89-.54,3.03-4.47,13.32-8.9,26.66-13.43,39.97-.75,2.19-1.35,4.32-1.08,6.35h0c.19,1.48.85,2.9,2.24,4.24,3.24,3.13,6.82,2.45,10.64,1.14,13.16-4.5,26.42-8.71,39.54-13.33,2.23-.78,3.59-.81,4.71.32l.03.03c.46.47.88,1.14,1.3,2.03,5.57,11.65,11.55,23.1,17.11,34.75.59,1.23,1.27,2.4,1.98,3.54.74,1.19,1.52,2.35,2.28,3.52,1.39,1.56,3.19,2.58,5.82,2.61,2.44.03,4.11-.85,5.4-2.2,1.5-2.64,3.01-5.29,4.37-8,5.74-11.38,11.52-22.73,16.96-34.25,1.51-3.2,2.88-3.42,5.99-2.33,13.12,4.6,26.37,8.82,39.53,13.31.83.28,1.64.53,2.44.72,1.16.28,2.28.42,3.38.33,1.66-.12,3.27-.76,4.8-2.25,2.22-2.17,2.52-4.5,2.09-6.94-.2-1.2-.58-2.43-1-3.68-.02-.05-.03-.1-.05-.15-3.93-13.74-9.14-27.06-13.47-40.66-.09-.26-.15-.51-.19-.73-.01-.08-.02-.15-.03-.22,0-.11-.02-.21-.02-.3-.01-.15,0-.28.02-.41.17-1.18,1.23-1.65,2.55-2.3,12.91-6.4,25.74-12.98,38.66-19.34,2.11-1.04,3.88-2.27,4.96-3.96.77-1.17,1.2-2.56,1.19-4.26-.03-2.62-1.16-4.46-2.92-5.89ZM192.71,146.04c.39-2.14.67-4.31.81-6.48-2.38,30.07-28.34,54.42-58.96,54.21-26.94-.18-49.37-18.22-56.31-43.02-.12-.4-.22-.79-.32-1.19-.11-.41-.21-.81-.3-1.22-.11-.41-.2-.83-.28-1.24-3.85-18.82,1.64-39.16,16.41-53.9,19.39-19.36,49.77-22.05,72.27-8.09.2.13.4.26.6.39.31.19.61.39.91.59.39.26.78.52,1.17.81,3.08,2.18,5.94,4.65,8.55,7.36.02.02.04.04.05.06.28.29.56.59.85.89.37.39.72.78,1.06,1.18.37.41.72.83,1.05,1.25.35.41.68.83,1,1.25.33.41.64.82.93,1.23h.01c.31.43.62.85.91,1.28.41.58.8,1.17,1.18,1.76.27.4.52.79.75,1.2.26.4.5.81.73,1.22.25.41.48.82.7,1.24.46.83.89,1.68,1.31,2.54.24.48.46.96.68,1.44.18.38.35.77.51,1.16.19.44.37.88.55,1.32,0,.02.01.03.02.05.17.43.33.86.48,1.29.14.33.26.67.37,1.01.12.34.24.69.35,1.04.19.56.37,1.12.53,1.69.1.32.19.65.28.98.08.27.16.55.22.82.13.47.24.94.35,1.41.12.47.22.95.32,1.43.1.48.2.96.28,1.44.1.48.18.97.25,1.46.08.5.15.99.21,1.49.06.43.11.85.15,1.28.01.04.02.08.01.12.02.2.05.39.06.59.02.1.02.2.03.3.01.17.03.34.04.51,0-.07,0-.14-.01-.21.48,5.36.23,10.76-.76,16.06Z"
+          />
+        </svg>
+      );
+    case "moon":
+      return (
+        <svg
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 270 270"
+          width={props.width || "22px"}
+          height={props.height || "22px"}
+          className={className}
+          style={style}
+          {...props}
+        >
+          <path
+            fill="#626262"
+            d="M137.17,250.04c-57.56-.44-104.68-39-116.29-95.18-9.81-47.47,13.58-99.12,55.72-123.18,7.67-4.38,15.57-8.14,24.01-10.81,3-.95,5.78-1.81,8.21,1,2.52,2.92,1.03,5.59-.6,8.19-10.8,17.18-15,35.92-13.91,56.11,2.25,41.56,38.3,79.45,79.59,83.99,24.05,2.65,45.86-2.48,65.63-16.38,2.85-2,5.65-4.7,9.38-2.18,3.75,2.54,2.26,6.12,1.42,9.51-12.88,51.96-60.42,89.32-113.16,88.92Z"
           />
         </svg>
       );

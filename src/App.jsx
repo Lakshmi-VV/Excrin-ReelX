@@ -2,18 +2,16 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import React from "react";
 import SignUp from "./login/SignUp";
 import SignIn from "./login/SignIn";
-import Header from "./components/Header";
 import ResetPassword from "./login/ResetPassword";
 import ThemeProvider from "./contexts/themeContext";
 import Dashboard from "./homePage/dashboard";
-import Artboard from "../videoArtboard/artboard";
+import Artboard from "../src/videoArtboard/artboard";
 
 function App() {
   return (
     <>
       <ThemeProvider>
         <BrowserRouter>
-          <Header />
           <Routes>
             <Route path="/" element={<Navigate to="/signup" replace />} />
             <Route path="/signup" element={<SignUp />} />

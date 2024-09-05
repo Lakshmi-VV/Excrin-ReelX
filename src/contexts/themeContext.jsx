@@ -1,17 +1,21 @@
-import React, { createContext } from 'react';
-import { useState, useEffect} from 'react'
+import React, { createContext } from "react";
+import { useState, useEffect } from "react";
 
- export const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme === "dark" ? true : false;
+  });
 
   useEffect(() => {
-    document.body.classList.toggle('dark-theme', isDarkTheme);
+    document.body.classList.toggle("dark-theme", isDarkTheme);
+    localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
   }, [isDarkTheme]);
 
   const toggleTheme = () => {
-    setIsDarkTheme(prevTheme => !prevTheme);
+    setIsDarkTheme((prevTheme) => !prevTheme);
   };
 
   return (
@@ -21,4 +25,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export default ThemeProvider  ;
+export default ThemeProvider;

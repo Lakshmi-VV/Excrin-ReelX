@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import Icon from "./icons";
-import "../homePage/newspacePopup.css";
 import User1 from "../images/user1.png";
 import User2 from "../images/user2.png";
 import User3 from "../images/user3.png";
@@ -200,7 +199,11 @@ export const ArtboardShare = ({ close }) => {
         <div className="artboard-popup-share">
           <div className="artboard-popup-share__heading">
             <p>Share</p>
-            <Icon icon="artboard-closebtn" onClick={close} />
+            <Icon
+              icon="artboard-closebtn"
+              className="svg-icon"
+              onClick={close}
+            />
           </div>
           <div className="artboard-popup-share__subheading">
             <p>Share with your team mates</p>
@@ -219,10 +222,6 @@ export const ArtboardShare = ({ close }) => {
             <p>Recents users from your organisation</p>
             <div className="artboard-popup-comments__users-images">
               <img src={User1} alt="user1" />
-              {/* <div className="user_status">
-                
-                <Icon icon="user-status" className="status" />
-              </div> */}
 
               <img src={User2} alt="user2" />
               <img src={User3} alt="user3" />
@@ -250,7 +249,7 @@ export const ArtboardShare = ({ close }) => {
 function Modal({ children, open, ...props }) {
   return (
     <div>
-      <div className="workspace-popup-overlay" onClick={() => open(false)}>
+      <div className="popup-overlay" onClick={() => open(false)}>
         {children}
       </div>
     </div>

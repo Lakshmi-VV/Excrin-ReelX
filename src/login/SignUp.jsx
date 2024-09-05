@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Icon from "../components/icons";
 import Google from "../icons/google.svg";
+import Header from "../components/Header";
 
 function SignUp() {
   const [signUpForm, setSignUpForm] = useState({
@@ -121,6 +122,7 @@ function SignUp() {
 
   return (
     <>
+      <Header />
       <div className="outer-container">
         <div className="inner-container">
           {step === 1 ? (

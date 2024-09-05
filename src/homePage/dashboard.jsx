@@ -4,16 +4,20 @@ import Icon from "../components/icons";
 import Img1 from "../images/img1.png";
 import Img2 from "../images/img2.png";
 import Img3 from "../images/img3.png";
-import Popup from "../homePage/newspacePopup";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 import Modal, { NewSpacePopup, UploadAssets } from "../components/modal";
+import { useContext } from "react";
+import logoLight from "../images/logo-light.png";
+import logoDark from "../images/logo-dark.png";
+import { ThemeContext } from "../contexts/themeContext.jsx";
 
 function Dashboard() {
   const [activeMenuItem, setActiveMenuItem] = useState("dashboard");
   const [projectName, setProjectName] = useState("");
   const [activeWorkspace, setActiveWorkspace] = useState(null);
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   const [workspaces, setWorkspaces] = useState([
     {
@@ -175,7 +179,7 @@ function Dashboard() {
         label: "Size",
         data: workspaces.map((workspace) => workspace.size),
         backgroundColor: workspaces.map((workspace) => workspace.color),
-        // borderColor: workspaces.map((workspace) => workspace.color),
+        borderColor: workspaces.map((workspace) => workspace.color),
         // borderColor: "white",
         // borderWidth: "2",
         // borderRadius: "20",
@@ -185,6 +189,30 @@ function Dashboard() {
 
   return (
     <>
+      <div className="header">
+        {isDarkTheme ? (
+          <img src={logoDark} height={"32px"} />
+        ) : (
+          <img src={logoLight} height={"32px"} />
+        )}
+        <div className="header-inputfield">
+          <Icon icon="search-icon" />
+          <input type="text" placeholder="Search files" />
+        </div>
+        <div className="header__theme-help">
+          <div className="header-theme">
+            {isDarkTheme ? (
+              <Icon icon="sun" onClick={toggleTheme} />
+            ) : (
+              <Icon icon="moon" onClick={toggleTheme} />
+            )}
+          </div>
+          <div className="header-userinitial">
+            {username ? username.charAt(0) : "!"}
+          </div>
+        </div>
+      </div>
+
       <div className="dashboard-container">
         <div className="projects-menu">
           <div className="menu-heading">
@@ -267,7 +295,10 @@ function Dashboard() {
           </div>
           <div className="logout-menu">
             <Icon icon="archive" className="svg-icon" />
-            <p>Logout</p>
+            <Link to="/" className="link-button">
+              <p>Logout</p>
+            </Link>
+
             <Icon icon="next" className="svg-icon" />
           </div>
         </div>
@@ -277,7 +308,9 @@ function Dashboard() {
             <div className="dashboarddiv">
               <div className="welcome-msg">
                 <p className="dashboard-title">Dashboard</p>
-                <p className="greeting">Hey {username} ! Welcome back</p>
+                <p className="greeting">
+                  Hey {username ? username : "User"} ! Welcome back
+                </p>
               </div>
               <div className="dashboard-folders">
                 {workspaces.map((workspace) => (

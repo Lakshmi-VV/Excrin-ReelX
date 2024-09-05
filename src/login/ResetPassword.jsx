@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Icon from "../components/icons";
+import Header from "../components/Header";
 
 function Reset() {
   const [resetForm, setResetForm] = useState({
@@ -147,6 +148,7 @@ function Reset() {
   };
   return (
     <>
+      <Header />
       <div className="outer-container">
         <div className="inner-container">
           <div className="reset-page">

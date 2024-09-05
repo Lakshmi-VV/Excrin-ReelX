@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Google from "../icons/google.svg";
 import Icon from "../components/icons";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 function SignIn() {
   const [signInForm, setSignInForm] = useState({
@@ -112,6 +113,7 @@ function SignIn() {
 
   return (
     <>
+      <Header />
       <div className="outer-container">
         <div className="inner-container">
           {step === 1 ? (
