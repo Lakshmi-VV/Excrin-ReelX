@@ -67,7 +67,6 @@ function Artboard() {
           <div className="artboard-container-vdo__videofile">
             <video width="70%" controls>
               <source src={Vdo} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
           </div>
         </div>
@@ -157,7 +156,7 @@ function Artboard() {
                   <div className="comments_section">
                     <div className="comments_section__filters">
                       <div className="comments_section__search-filter">
-                        <Icon icon="search-icon" className="svg-icon" />
+                        <Icon icon="search-icon" className="search-svg-icon" />
                         <input type="text" placeholder="Search" />
                       </div>
                       <div className="comments_section__filter-icon">
@@ -204,7 +203,7 @@ function Artboard() {
                               <p>Resolve</p>
                             </div>
                             <div className="comments-section__resolve">
-                              <Icon icon="comment-reply" />
+                              <Icon icon="comment-reply" className="svg-icon" />
                               <p>Reply</p>
                             </div>
                           </div>
@@ -243,7 +242,7 @@ function Artboard() {
                               <p>Resolve</p>
                             </div>
                             <div className="comments-section__resolve">
-                              <Icon icon="comment-reply" />
+                              <Icon icon="comment-reply" className="svg-icon" />
                               <p>Reply</p>
                             </div>
                           </div>
@@ -282,7 +281,7 @@ function Artboard() {
                               <p>Resolve</p>
                             </div>
                             <div className="comments-section__resolve">
-                              <Icon icon="comment-reply" />
+                              <Icon icon="comment-reply" className="svg-icon" />
                               <p>Reply</p>
                             </div>
                           </div>
@@ -321,7 +320,7 @@ function Artboard() {
                               <p>Resolve</p>
                             </div>
                             <div className="comments-section__resolve">
-                              <Icon icon="comment-reply" />
+                              <Icon icon="comment-reply" className="svg-icon" />
                               <p>Reply</p>
                             </div>
                           </div>
@@ -360,7 +359,7 @@ function Artboard() {
                               <p>Resolve</p>
                             </div>
                             <div className="comments-section__resolve">
-                              <Icon icon="comment-reply" />
+                              <Icon icon="comment-reply" className="svg-icon" />
                               <p>Reply</p>
                             </div>
                           </div>

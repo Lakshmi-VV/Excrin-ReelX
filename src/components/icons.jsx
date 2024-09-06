@@ -571,10 +571,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="100"
+          width={props.width || "40"}
+          height={props.height || "100"}
           viewBox="0 0 40 100"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             opacity="0.3"
@@ -617,10 +620,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="59"
-          height="85"
+          width={props.width || "59"}
+          height={props.height || "85"}
           viewBox="0 0 59 85"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             opacity="0.3"
@@ -658,11 +664,12 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
           className={className}
+          style={style}
           {...props}
         >
           <path
@@ -685,10 +692,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
+          width={props.width || "32"}
+          height={props.height || "32"}
           viewBox="0 0 32 32"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M23.3035 12.015C23.3134 12.0149 23.3234 12.0149 23.3334 12.0149C26.6471 12.0149 29.3334 14.7061 29.3334 18.026C29.3334 21.12 27.0001 23.668 24.0001 24.0002M23.3035 12.015C23.3233 11.795 23.3334 11.5722 23.3334 11.347C23.3334 7.28951 20.0502 4.00024 16.0001 4.00024C12.1644 4.00024 9.01652 6.95047 8.69397 10.7095M23.3035 12.015C23.1671 13.5304 22.5715 14.913 21.6571 16.0222M8.69397 10.7095C5.31205 11.0319 2.66675 13.8854 2.66675 17.358C2.66675 20.5892 4.95709 23.2845 8.00008 23.9033M8.69397 10.7095C8.90443 10.6894 9.11772 10.6791 9.33341 10.6791C10.8345 10.6791 12.2197 11.1762 13.3341 12.0149"
@@ -710,10 +720,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={props.width || "24"}
+          height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M6.09881 19C4.7987 18.8721 3.82475 18.4816 3.17157 17.8284C2 16.6569 2 14.7712 2 11V10.5C2 6.72876 2 4.84315 3.17157 3.67157C4.34315 2.5 6.22876 2.5 10 2.5H14C17.7712 2.5 19.6569 2.5 20.8284 3.67157C22 4.84315 22 6.72876 22 10.5V11C22 14.7712 22 16.6569 20.8284 17.8284C19.6569 19 17.7712 19 14 19C13.4395 19.0125 12.9931 19.0551 12.5546 19.155C11.3562 19.4309 10.2465 20.0441 9.14987 20.5789C7.58729 21.3408 6.806 21.7218 6.31569 21.3651C5.37769 20.6665 6.29454 18.5019 6.5 17.5"
@@ -727,10 +740,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={props.width || "24"}
+          height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z"
@@ -753,10 +769,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width={props.width || "20"}
+          height={props.height || "20"}
           viewBox="0 0 20 20"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M10.0003 6.66675V13.3334M13.3337 10.0001H6.66699"
@@ -774,10 +793,13 @@ const Icon = ({ icon, style, className, width, height, ...props }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={props.width || "24"}
+          height={props.height || "24"}
           viewBox="0 0 24 24"
           fill="none"
+          className={className}
+          style={style}
+          {...props}
         >
           <path
             d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"

@@ -181,7 +181,6 @@ function Dashboard() {
         backgroundColor: workspaces.map((workspace) => workspace.color),
         borderColor: workspaces.map((workspace) => workspace.color),
         // borderColor: "white",
-        // borderWidth: "2",
         // borderRadius: "20",
       },
     ],
@@ -226,7 +225,7 @@ function Dashboard() {
               }`}
               onClick={() => handleMenuItemClick("dashboard")}
             >
-              <Icon icon="dashboard" className="svg-icon" />
+              <Icon icon="dashboard" className="dashboard-svg-icon" />
               <p
                 className={` ${
                   activeMenuItem === "dashboard" ? "clicked" : ""
@@ -236,7 +235,7 @@ function Dashboard() {
               </p>
             </div>
             <div className="menu-item">
-              <Icon icon="archive" className="svg-icon" />
+              <Icon icon="archive" className="dashboard-svg-icon" />
               <p>Archive</p>
             </div>
           </div>
@@ -275,10 +274,10 @@ function Dashboard() {
                 handleNewWorkspaceModal();
               }}
             >
-              <Icon icon="new-menu" className="svg-icon" />
+              <Icon icon="new-menu" className="dashboard-svg-icon" />
               <p>New Workspace</p>
 
-              <span>⌘ N</span>
+              <span>⌘N</span>
             </div>
 
             {newWorkspacePopup && (
@@ -294,12 +293,14 @@ function Dashboard() {
             )}
           </div>
           <div className="logout-menu">
-            <Icon icon="archive" className="svg-icon" />
+            <Icon icon="archive" className="dashboard-svg-icon" />
             <Link to="/" className="link-button">
-              <p>Logout</p>
+              <div className="logout-text">
+                <p>Logout</p>
+              </div>
             </Link>
 
-            <Icon icon="next" className="svg-icon" />
+            <Icon icon="next" className="dashboard-svg-icon" />
           </div>
         </div>
 
@@ -363,14 +364,12 @@ function Dashboard() {
                       onClick={() => setView("grid")}
                       className={`${view === "grid" ? "active" : ""}`}
                     >
-                      {" "}
-                      <Icon icon="grid-view" className="svg-icon" />{" "}
+                      <Icon icon="grid-view" className="svg-icon" />
                     </div>
                     <div
                       onClick={() => setView("list")}
                       className={`${view === "list" ? "active" : ""}`}
                     >
-                      {" "}
                       <Icon icon="list-view" className="svg-icon" />
                     </div>
                   </div>
@@ -506,14 +505,14 @@ function Dashboard() {
 
                 <div className="upgrade">
                   <div className="left-upgrade">
-                    <Icon icon="left-upgrade" />
+                    <Icon icon="left-upgrade" className="upgrade-svg-icon" />
                   </div>
                   <div className="content">
                     <p>Upgrade storage over {upgradeStorage} GB</p>
                     <button>Upgrade</button>
                   </div>
                   <div className="right-upgrade">
-                    <Icon icon="right-upgrade" />
+                    <Icon icon="right-upgrade" className="upgrade-svg-icon" />
                   </div>
                 </div>
               </div>
@@ -539,7 +538,7 @@ function Dashboard() {
                     className="newworkspace-header__upload"
                     onClick={handleUploadAssetsModal}
                   >
-                    <Icon icon="assest-upload" />
+                    <Icon icon="assest-upload" className="svg-icon" />
                     <p className="newworkspace-header__upload-text">Upload</p>
                   </div>
                   <div className="newworkspace-header__share">
@@ -548,18 +547,16 @@ function Dashboard() {
                     </button>
                   </div>
                   <div className="newworkspace-header__comment">
-                    <Icon icon="workspace-comment" />
+                    <Icon icon="workspace-comment" className="svg-icon" />
                   </div>
                   <div className="newworkspace-header__option-icon">
-                    <Icon icon="three-dothole" />
+                    <Icon icon="three-dothole" className="svg-icon" />
                   </div>
                 </div>
 
                 <div className="welcome-message">
                   <div className="welcome-message__greeting">
-                    <p className="welcome-message__greeting-text">
-                      Hey John! 👋
-                    </p>
+                    <p className="welcome-message__greeting-text">Hey !! 👋</p>
                     <p className="welcome-message__greeting-welcome">
                       Welcome {activeWorkspace.name}
                     </p>
@@ -574,7 +571,7 @@ function Dashboard() {
                         className="welcome-message__action-icon"
                         onClick={handleUploadAssetsModal}
                       >
-                        <Icon icon="assest-upload" />
+                        <Icon icon="assest-upload" className="svg-icon" />
                       </div>
                       <div className="welcome-message__action-details">
                         <p className="welcome-message__action-title">
@@ -593,7 +590,7 @@ function Dashboard() {
 
                     <div className="welcome-message__action">
                       <div className="welcome-message__action-icon">
-                        <Icon icon="app-tour" />
+                        <Icon icon="app-tour" className="svg-icon" />
                       </div>
                       <div className="welcome-message__action-details">
                         <p className="welcome-message__action-title">
@@ -625,7 +622,7 @@ function Dashboard() {
                     className="newworkspace-header__upload"
                     onClick={handleUploadAssetsModal}
                   >
-                    <Icon icon="assest-upload" />
+                    <Icon icon="assest-upload" className="svg-icon" />
                     <p className="newworkspace-header__upload-text">Upload</p>
                   </div>
                   <div className="newworkspace-header__share">
@@ -634,10 +631,10 @@ function Dashboard() {
                     </button>
                   </div>
                   <div className="newworkspace-header__comment">
-                    <Icon icon="workspace-comment" />
+                    <Icon icon="workspace-comment" className="svg-icon" />
                   </div>
                   <div className="newworkspace-header__option-icon">
-                    <Icon icon="three-dothole" />
+                    <Icon icon="three-dothole" className="svg-icon" />
                   </div>
                 </div>
                 {uploadAssetsPopup && (

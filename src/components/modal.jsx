@@ -94,7 +94,7 @@ export const NewSpacePopup = ({
                 </div>
 
                 <button className="copy-invite__copy-btn">
-                  <Icon className="svg-icon" icon="copy-icon" />
+                  <Icon className="popup-svg-icon" icon="copy-icon" />
                   Copy
                 </button>
               </div>
@@ -199,11 +199,7 @@ export const ArtboardShare = ({ close }) => {
         <div className="artboard-popup-share">
           <div className="artboard-popup-share__heading">
             <p>Share</p>
-            <Icon
-              icon="artboard-closebtn"
-              className="svg-icon"
-              onClick={close}
-            />
+            <Icon icon="artboard-closebtn" onClick={close} />
           </div>
           <div className="artboard-popup-share__subheading">
             <p>Share with your team mates</p>
