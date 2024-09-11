@@ -669,6 +669,10 @@ input:focus {
 
 .workspace-popup-content {
   width: 510px;
+  border-radius: 20px;
+  border: 1px solid var(--zinc-500);
+  background: var(--neutral-50);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
 }
 .dot {
   width: 6px;
@@ -2191,7 +2195,9 @@ input:focus {
   align-items: flex-start;
   gap: 16px;
   border-radius: 12px;
+  border: 1px solid var(--zinc-500);
   background: var(--neutral-50);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
 }
 .artboard-popup-share {
   display: flex;

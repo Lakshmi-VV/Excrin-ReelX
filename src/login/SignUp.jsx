@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Icon from "../components/icons";
-import Google from "../icons/google.svg";
+import Icon from "../components/Icons";
+import Google from "../assets/icons/google.svg";
 import Header from "../components/Header";
 
 function SignUp() {

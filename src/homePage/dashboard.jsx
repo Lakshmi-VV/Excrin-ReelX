@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import Icon from "../components/icons";
-import Img1 from "../images/img1.png";
-import Img2 from "../images/img2.png";
-import Img3 from "../images/img3.png";
+import Icon from "../components/Icons.jsx";
+import Img1 from "../assets/images/img1.png";
+import Img2 from "../assets/images/img2.png";
+import Img3 from "../assets/images/img3.png";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
-import Modal, { NewSpacePopup, UploadAssets } from "../components/modal";
+import Modal from "../components/Modal.jsx";
+import NewSpacePopup from "../components/NewSpacePopup.jsx";
+import UploadAssets from "../components/UploadAssets.jsx";
 import { useContext } from "react";
-import logoLight from "../images/logo-light.png";
-import logoDark from "../images/logo-dark.png";
+import logoLight from "../assets/images/logo-light.png";
+import logoDark from "../assets/images/logo-dark.png";
 import { ThemeContext } from "../contexts/themeContext.jsx";
 
 function Dashboard() {
@@ -492,11 +494,11 @@ function Dashboard() {
                   {workspaces.map((workspace) => (
                     <>
                       <div key={workspace.id}>
-                        <p
+                        <span
                           className={`size-icon ${workspace.name.toLowerCase()}`}
-                        ></p>
-                        <p className="name">{workspace.name}</p>
-                        <p className="size">{workspace.size} MB</p>
+                        ></span>
+                        <span className="name">{workspace.name}</span>
+                        <span className="size">{workspace.size} MB</span>
                       </div>
                       <div className="border-storage"></div>
                     </>

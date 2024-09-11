@@ -1,10 +1,11 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import Vdo from "../videos/vdo-1.mp4";
-import Modal, { ArtboardShare } from "../components/modal";
+import Vdo from "../assets/videos/vdo-1.mp4";
+import Modal from "../components/Modal";
+import ArtboardShare from "../components/ArtboardShare";
 import { useState } from "react";
-import Icon from "../components/icons";
-import UserImg from "../images/artboard_user.png";
+import Icon from "../components/Icons";
+import UserImg from "../assets/images/artboard_user.png";
 import Header from "../components/Header";
 
 function Artboard() {

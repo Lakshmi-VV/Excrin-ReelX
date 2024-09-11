@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Google from "../icons/google.svg";
-import Icon from "../components/icons";
+import Google from "../assets/icons/google.svg";
+import Icon from "../components/Icons";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
